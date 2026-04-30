@@ -1,0 +1,418 @@
+{
+  "overview": {
+    "total_tickets": 16000,
+    "total_handle_minutes": 203416,
+    "overall_csat": 66.4,
+    "overall_aht": 12.71,
+    "overall_reopen": 16.9,
+    "overall_escalation": 7.3,
+    "overall_frt": 15.5,
+    "date_range": {
+      "start": "2026-01-01",
+      "end": "2026-03-31"
+    }
+  },
+  "by_channel": [
+    {
+      "channel": "phone",
+      "tickets": 2902,
+      "volume_pct": 18.1,
+      "csat": 87.4,
+      "aht": 9.16,
+      "reopen": 0.0,
+      "escalation": 11.6,
+      "frt": 15.33,
+      "total_min": 26585,
+      "cost_pct": 13.1
+    },
+    {
+      "channel": "email",
+      "tickets": 6118,
+      "volume_pct": 38.2,
+      "csat": 71.3,
+      "aht": 11.96,
+      "reopen": 0.0,
+      "escalation": 6.4,
+      "frt": 15.52,
+      "total_min": 73199,
+      "cost_pct": 36.0
+    },
+    {
+      "channel": "social",
+      "tickets": 163,
+      "volume_pct": 1.0,
+      "csat": 70.6,
+      "aht": 9.99,
+      "reopen": 0.0,
+      "escalation": 6.7,
+      "frt": 15.19,
+      "total_min": 1628,
+      "cost_pct": 0.8
+    },
+    {
+      "channel": "chat",
+      "tickets": 6817,
+      "volume_pct": 42.6,
+      "csat": 53.1,
+      "aht": 14.96,
+      "reopen": 39.7,
+      "escalation": 6.3,
+      "frt": 15.56,
+      "total_min": 102004,
+      "cost_pct": 50.1
+    }
+  ],
+  "by_issue_type": [
+    {
+      "issue_type": "account",
+      "tickets": 2664,
+      "csat": 64.2,
+      "aht": 12.85,
+      "reopen": 14.9,
+      "escalation": 10.8
+    },
+    {
+      "issue_type": "delivery",
+      "tickets": 2736,
+      "csat": 68.2,
+      "aht": 12.64,
+      "reopen": 20.4,
+      "escalation": 5.8
+    },
+    {
+      "issue_type": "login",
+      "tickets": 2592,
+      "csat": 67.0,
+      "aht": 12.6,
+      "reopen": 15.6,
+      "escalation": 5.6
+    },
+    {
+      "issue_type": "other",
+      "tickets": 2696,
+      "csat": 66.8,
+      "aht": 12.7,
+      "reopen": 15.5,
+      "escalation": 5.5
+    },
+    {
+      "issue_type": "payment",
+      "tickets": 2665,
+      "csat": 66.6,
+      "aht": 12.81,
+      "reopen": 15.5,
+      "escalation": 10.2
+    },
+    {
+      "issue_type": "refund",
+      "tickets": 2647,
+      "csat": 65.8,
+      "aht": 12.69,
+      "reopen": 19.5,
+      "escalation": 5.9
+    }
+  ],
+  "by_customer_type": [
+    {
+      "customer_type": "broker",
+      "tickets": 3339,
+      "csat": 65.9,
+      "aht": 12.7,
+      "reopen": 18.6,
+      "escalation": 7.4
+    },
+    {
+      "customer_type": "client",
+      "tickets": 1494,
+      "csat": 66.7,
+      "aht": 12.77,
+      "reopen": 17.1,
+      "escalation": 7.4
+    },
+    {
+      "customer_type": "fan",
+      "tickets": 11167,
+      "csat": 66.6,
+      "aht": 12.71,
+      "reopen": 16.4,
+      "escalation": 7.3
+    }
+  ],
+  "by_month": [
+    {
+      "month": "2026-01",
+      "month_label": "Jan 2026",
+      "tickets": 5538,
+      "csat": 65.6,
+      "aht": 12.65,
+      "reopen": 16.6,
+      "escalation": 7.5
+    },
+    {
+      "month": "2026-02",
+      "month_label": "Feb 2026",
+      "tickets": 4987,
+      "csat": 66.8,
+      "aht": 12.81,
+      "reopen": 17.4,
+      "escalation": 7.2
+    },
+    {
+      "month": "2026-03",
+      "month_label": "Mar 2026",
+      "tickets": 5475,
+      "csat": 67.0,
+      "aht": 12.69,
+      "reopen": 16.8,
+      "escalation": 7.2
+    }
+  ],
+  "aht_bins": [
+    {
+      "bin": "0-5",
+      "tickets": 639,
+      "csat": 73.7
+    },
+    {
+      "bin": "5-10",
+      "tickets": 4217,
+      "csat": 72.3
+    },
+    {
+      "bin": "10-15",
+      "tickets": 6300,
+      "csat": 68.1
+    },
+    {
+      "bin": "15-20",
+      "tickets": 3617,
+      "csat": 59.9
+    },
+    {
+      "bin": "20-25",
+      "tickets": 1068,
+      "csat": 54.0
+    },
+    {
+      "bin": "25+",
+      "tickets": 159,
+      "csat": 51.6
+    }
+  ],
+  "channel_issue_heatmap": [
+    {
+      "channel": "phone",
+      "issue_type": "account",
+      "tickets": 468,
+      "csat": 85.3,
+      "aht": 9.12,
+      "reopen": 0.0
+    },
+    {
+      "channel": "phone",
+      "issue_type": "delivery",
+      "tickets": 502,
+      "csat": 88.0,
+      "aht": 9.06,
+      "reopen": 0.0
+    },
+    {
+      "channel": "phone",
+      "issue_type": "login",
+      "tickets": 471,
+      "csat": 88.1,
+      "aht": 9.17,
+      "reopen": 0.0
+    },
+    {
+      "channel": "phone",
+      "issue_type": "other",
+      "tickets": 502,
+      "csat": 88.4,
+      "aht": 8.99,
+      "reopen": 0.0
+    },
+    {
+      "channel": "phone",
+      "issue_type": "payment",
+      "tickets": 466,
+      "csat": 86.7,
+      "aht": 9.37,
+      "reopen": 0.0
+    },
+    {
+      "channel": "phone",
+      "issue_type": "refund",
+      "tickets": 493,
+      "csat": 87.4,
+      "aht": 9.28,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "account",
+      "tickets": 1029,
+      "csat": 69.8,
+      "aht": 12.06,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "delivery",
+      "tickets": 1048,
+      "csat": 70.9,
+      "aht": 11.94,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "login",
+      "tickets": 985,
+      "csat": 73.2,
+      "aht": 11.88,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "other",
+      "tickets": 1012,
+      "csat": 71.7,
+      "aht": 12.03,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "payment",
+      "tickets": 1034,
+      "csat": 71.5,
+      "aht": 11.92,
+      "reopen": 0.0
+    },
+    {
+      "channel": "email",
+      "issue_type": "refund",
+      "tickets": 1010,
+      "csat": 71.1,
+      "aht": 11.95,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "account",
+      "tickets": 24,
+      "csat": 75.0,
+      "aht": 11.9,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "delivery",
+      "tickets": 22,
+      "csat": 68.2,
+      "aht": 9.48,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "login",
+      "tickets": 29,
+      "csat": 72.4,
+      "aht": 8.88,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "other",
+      "tickets": 26,
+      "csat": 53.8,
+      "aht": 10.07,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "payment",
+      "tickets": 27,
+      "csat": 74.1,
+      "aht": 10.02,
+      "reopen": 0.0
+    },
+    {
+      "channel": "social",
+      "issue_type": "refund",
+      "tickets": 35,
+      "csat": 77.1,
+      "aht": 9.83,
+      "reopen": 0.0
+    },
+    {
+      "channel": "chat",
+      "issue_type": "account",
+      "tickets": 1143,
+      "csat": 50.4,
+      "aht": 15.11,
+      "reopen": 34.6
+    },
+    {
+      "channel": "chat",
+      "issue_type": "delivery",
+      "tickets": 1164,
+      "csat": 57.3,
+      "aht": 14.88,
+      "reopen": 47.9
+    },
+    {
+      "channel": "chat",
+      "issue_type": "login",
+      "tickets": 1107,
+      "csat": 52.4,
+      "aht": 14.79,
+      "reopen": 36.6
+    },
+    {
+      "channel": "chat",
+      "issue_type": "other",
+      "tickets": 1156,
+      "csat": 53.4,
+      "aht": 14.95,
+      "reopen": 36.2
+    },
+    {
+      "channel": "chat",
+      "issue_type": "payment",
+      "tickets": 1138,
+      "csat": 53.8,
+      "aht": 15.09,
+      "reopen": 36.2
+    },
+    {
+      "channel": "chat",
+      "issue_type": "refund",
+      "tickets": 1109,
+      "csat": 50.9,
+      "aht": 14.96,
+      "reopen": 46.5
+    }
+  ],
+  "negative_csat_by_channel": [
+    {
+      "channel": "phone",
+      "count": 367,
+      "pct_of_negative": 6.8
+    },
+    {
+      "channel": "email",
+      "count": 1753,
+      "pct_of_negative": 32.7
+    },
+    {
+      "channel": "social",
+      "count": 48,
+      "pct_of_negative": 0.9
+    },
+    {
+      "channel": "chat",
+      "count": 3200,
+      "pct_of_negative": 59.6
+    }
+  ]
+}
