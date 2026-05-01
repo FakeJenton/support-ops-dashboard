@@ -9,6 +9,7 @@ import {
   data,
 } from "../lib/data";
 import SectionHeader from "./SectionHeader";
+import Takeaway from "./Takeaway";
 
 function csatColor(csat: number): string {
   const min = 45;
@@ -61,9 +62,9 @@ export default function ChannelIssueHeatmap() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-12 sm:px-10">
       <SectionHeader
-        eyebrow="Channel x Issue"
+        eyebrow="02 / Depth"
         title="CSAT by channel and issue type"
-        subtitle="Phone clears 85% across every issue. Chat sits below 60% on every issue. The channel choice dominates the issue type entirely."
+        subtitle="Same data sliced by both dimensions. Each cell is CSAT % with ticket count below."
       />
       <div className="rounded-lg border border-[var(--card-border)] bg-white p-4">
         <div className="overflow-x-auto">
@@ -133,6 +134,11 @@ export default function ChannelIssueHeatmap() {
           </div>
         </div>
       </div>
+      <Takeaway
+        variant="alert"
+        insight="Phone is green on every issue. Chat is red on every issue."
+        implication="Channel choice dominates issue type. There is no problem type chat handles well, and no problem type phone handles poorly. The fix lives in the channel, not the queue."
+      />
     </section>
   );
 }

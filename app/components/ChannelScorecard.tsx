@@ -18,6 +18,7 @@ import {
   data,
 } from "../lib/data";
 import SectionHeader from "./SectionHeader";
+import Takeaway from "./Takeaway";
 
 const channels = CHANNEL_ORDER.map((c) => {
   const row = data.by_channel.find((r) => r.channel === c)!;
@@ -90,9 +91,9 @@ export default function ChannelScorecard() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-12 sm:px-10">
       <SectionHeader
-        eyebrow="The Headline"
+        eyebrow="01 / The Headline"
         title="Chat underperforms on every dimension while carrying the most volume"
-        subtitle="Same period, same agents, same customers: the gap between phone and chat sits at 34 CSAT points and 5.8 minutes of handle time. The spread is structural, not a Q1 trend."
+        subtitle="Four channels compared on CSAT, handle time, reopen rate, and volume share."
       />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <Panel
@@ -195,6 +196,16 @@ export default function ChannelScorecard() {
         Chat is highlighted to make the gap legible. Phone shaded for contrast.
         Cost % derived from total handle minutes per channel.
       </div>
+      <Takeaway
+        variant="alert"
+        insight="Phone clears 87% CSAT. Chat clears 53%. Same period, same customers."
+        implication="The 34-point spread is structural, not seasonal. Chat is the only channel with reopens, the longest handle time, and the most volume, all at once."
+        action={{
+          title: "Re-architect chat closure to fix reopens",
+          description:
+            "Add a 'did this fully resolve your issue?' confirmation step before close. Route any reopened ticket to the original agent or a senior agent, not back into the queue.",
+        }}
+      />
     </section>
   );
 }

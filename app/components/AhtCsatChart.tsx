@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { COLORS, data } from "../lib/data";
 import SectionHeader from "./SectionHeader";
+import Takeaway from "./Takeaway";
 
 const bins = data.aht_bins.map((b) => ({
   ...b,
@@ -23,9 +24,9 @@ export default function AhtCsatChart() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-12 sm:px-10">
       <SectionHeader
-        eyebrow="Quality vs Speed"
+        eyebrow="04 / Mechanism"
         title="Long tickets are bad tickets"
-        subtitle="CSAT collapses from 74% on tickets under 5 minutes to 52% on tickets over 25 minutes. First-response time, by contrast, has no measurable CSAT relationship. The bottleneck is resolution quality, not greeting speed."
+        subtitle="Ticket count and CSAT plotted against handle-time bin."
       />
       <div className="rounded-lg border border-[var(--card-border)] bg-white p-4">
         <div className="h-80">
@@ -103,25 +104,17 @@ export default function AhtCsatChart() {
             </ComposedChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-slate-600 sm:grid-cols-4">
-          <div className="rounded border border-[var(--card-border)] bg-slate-50 p-3">
-            <div className="font-semibold text-[var(--navy)]">22-pt drop</div>
-            <div className="mt-0.5">CSAT from sub-5min to 25+ min</div>
-          </div>
-          <div className="rounded border border-[var(--card-border)] bg-slate-50 p-3">
-            <div className="font-semibold text-[var(--navy)]">94% of volume</div>
-            <div className="mt-0.5">Lives in 5-20 minute bins</div>
-          </div>
-          <div className="rounded border border-[var(--card-border)] bg-slate-50 p-3">
-            <div className="font-semibold text-[var(--navy)]">Chat AHT 15.0</div>
-            <div className="mt-0.5">Sits in the 15-20 collapse zone</div>
-          </div>
-          <div className="rounded border border-[var(--card-border)] bg-slate-50 p-3">
-            <div className="font-semibold text-[var(--navy)]">Phone AHT 9.2</div>
-            <div className="mt-0.5">Sits in the 5-10 high-CSAT zone</div>
-          </div>
-        </div>
       </div>
+      <Takeaway
+        variant="alert"
+        insight="CSAT collapses 22 points as handle time grows from 5 to 25 minutes."
+        implication="Resolution quality drives satisfaction, not greeting speed. Chat sits at 15 minutes (the collapse zone). Phone sits at 9 (the high-CSAT zone). First-response time, by contrast, shows no CSAT relationship at all."
+        action={{
+          title: "Deploy AI-assisted resolution in chat",
+          description:
+            "Embed reply-drafting and customer-context retrieval (order status, refund eligibility, prior tickets) directly in the agent console. Target the 5.8-minute AHT gap between chat and phone.",
+        }}
+      />
     </section>
   );
 }

@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { COLORS, ISSUE_LABEL, data } from "../lib/data";
 import SectionHeader from "./SectionHeader";
+import Takeaway from "./Takeaway";
 
 const COMPLEXITY = ["account", "payment"] as const;
 const WAIT_STATE = ["delivery", "refund"] as const;
@@ -110,9 +111,9 @@ export default function IssueQuadrant() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-12 sm:px-10">
       <SectionHeader
-        eyebrow="Two Failure Modes"
-        title="Issue type splits cleanly into two failure modes"
-        subtitle="Escalation rate (x) maps complexity. Reopen rate (y) maps unresolved customer state. Account and payment cluster on the right (need tier 2 sooner). Delivery and refund cluster on top (need async, not synchronous chat)."
+        eyebrow="05 / Where to intervene"
+        title="Issue type splits into two distinct failure modes"
+        subtitle="X axis: escalation rate. Y axis: reopen rate. Bubble size: ticket volume."
       />
       <div className="rounded-lg border border-[var(--card-border)] bg-white p-4">
         <div className="h-96">
@@ -189,23 +190,30 @@ export default function IssueQuadrant() {
         <div className="mt-2">
           <Legend />
         </div>
-        <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-600 sm:grid-cols-3">
-          {points.map((p) => (
-            <div
-              key={p.issue}
-              className="flex items-center gap-2 rounded border border-[var(--card-border)] bg-slate-50 p-2"
-            >
-              <span
-                className="inline-block h-2.5 w-2.5 flex-shrink-0 rounded-full"
-                style={{ backgroundColor: p.fill }}
-              />
-              <span className="font-medium text-[var(--navy)]">{p.name}</span>
-              <span className="ml-auto tabular-nums text-slate-500">
-                esc {p.escalation.toFixed(1)}% / re {p.reopen.toFixed(1)}%
-              </span>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <Takeaway
+          variant="alert"
+          eyebrow="Failure mode 01 / Complexity"
+          insight="Account and payment escalate at 2x the baseline rate."
+          implication="These are complexity issues. Customers need tier-2 expertise, but they're filing through first-touch chat first. Account and payment are 33% of volume but generate 48% of all escalations."
+          action={{
+            title: "Route account and payment directly to tier 2",
+            description:
+              "Add an intent-classification step at intake. Bypass first-touch chat for these two categories. One workflow change addresses nearly half of escalations.",
+          }}
+        />
+        <Takeaway
+          variant="warn"
+          eyebrow="Failure mode 02 / Wait state"
+          insight="Delivery and refund reopen at ~20%, well above baseline."
+          implication="These are wait-state issues. Resolution depends on external events the agent cannot trigger in-session (a refund clearing, a package arriving). Synchronous chat is the wrong channel for them."
+          action={{
+            title: "Deflect wait-state issues to async channels",
+            description:
+              "Build an in-app refund tracker and a delivery-status flow. Conservatively, deflecting 30% of chat volume saves ~510 agent-hours per quarter.",
+          }}
+        />
       </div>
     </section>
   );

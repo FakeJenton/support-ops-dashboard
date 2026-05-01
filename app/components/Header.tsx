@@ -24,9 +24,8 @@ export default function Header() {
         </h1>
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600">
           {total_tickets.toLocaleString()} tickets analyzed across{" "}
-          {formatDate(date_range.start)} to {formatDate(date_range.end)}. The
-          headline: chat carries 43% of volume but generates 50% of cost, 60% of
-          negative CSAT, and 100% of reopens.
+          {formatDate(date_range.start)} to {formatDate(date_range.end)}, on a
+          synthetic dataset of customer support operations.
         </p>
       </div>
     </header>

@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { COLORS, data } from "../lib/data";
 import SectionHeader from "./SectionHeader";
+import Takeaway from "./Takeaway";
 
 const months = data.by_month;
 
@@ -132,9 +133,9 @@ export default function MonthlyTrend() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-12 sm:px-10">
       <SectionHeader
-        eyebrow="Counter-Narrative"
-        title="Monthly KPIs are flat: the issue is structural, not a Q1 trend"
-        subtitle="Volume, CSAT, and handle time barely move from January to March. Aggregate CSAT swings of 1.4 points are entirely explained by month-over-month channel mix shifts."
+        eyebrow="03 / Counter-Narrative"
+        title="Monthly KPIs are flat across the quarter"
+        subtitle="Volume, CSAT, and handle time traced by month."
       />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Panel
@@ -166,10 +167,14 @@ export default function MonthlyTrend() {
         />
       </div>
       <p className="mt-3 text-xs text-slate-500">
-        Y-axis ranges are tight on purpose. Auto-scaling these series to start
-        at zero would imply a dramatic flat line; here it shows the actual
-        movement (or absence of it).
+        Y-axis ranges are tight on purpose. Auto-scaling to zero would hide the
+        actual movement (or absence of it).
       </p>
+      <Takeaway
+        variant="neutral"
+        insight="CSAT moved 1.4 points across the entire quarter. There is no Q1 decline to explain."
+        implication="Any aggregate 'things are getting worse' narrative is a channel-mix artifact. Heavier-chat months look worse without anything actually changing in operations."
+      />
     </section>
   );
 }
